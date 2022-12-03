@@ -7,7 +7,6 @@
 LiquidCrystal lcd(A5, A4, A3, A2, A1, A0);
 MFRC522 mfrc522(9, 13);
  
-int light = 0;
  
 int trigPin = 10;
 int echoPin = 11;
@@ -66,7 +65,7 @@ Serial.begin(9600);
  
 void loop() {
 
-light = analogRead(A12);
+
 
 digitalWrite(trigPin, LOW);
 delayMicroseconds(2);
@@ -75,8 +74,6 @@ delayMicroseconds(10);
 digitalWrite(trigPin, LOW);
 duration = pulseIn(echoPin, HIGH);
 distance = duration * 0.034 / 2;
-
-
 
 
   
